@@ -1,16 +1,38 @@
 <template>
-  <swiper>
-    <div slot="left">首页</div>
-  </swiper>
+  <div id="home">
+    <div>
+      <el-container style="height: 500px; border: 1px solid #eee">
+        <el-aside width="200px" style="background-color: rgb(238, 241, 246)">Aside</el-aside>
+        <el-container>
+          <el-header>
+            <mainswiper/>
+          </el-header>
+          <el-main>
+            <div>
+              <category/>
+              <profile/>
+            </div>
+
+
+          </el-main>
+        </el-container>
+      </el-container>
+    </div>
+<!--    <router-view/>-->
+  </div>
 </template>
 
 
 <script>
-  import swiper from "components/swiper";
+  import mainswiper from "../components/mainswiper";
+  import Category from "./Category";
+  import Profile from "./Profile";
   export default {
     name: "home",
     components: {
-      swiper
+      mainswiper,
+      Category,
+      Profile
     }
   }
 </script>
@@ -40,20 +62,5 @@
 
   body > .el-container {
     margin-bottom: 40px;
-  }
-
-  .swiper {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-
-  .swiper-list {
-    flex: 1;
-  }
-
-  .swiper-list:hover {
-    color: deeppink;
-    cursor: pointer;
   }
 </style>
